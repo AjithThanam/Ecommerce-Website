@@ -2,7 +2,7 @@ export class Product {
 
     sku: string
     name: string
-    diescription: string
+    description: string
     unitPrice: number
     imageUrl: string
     active: boolean

@@ -8,13 +8,18 @@ import { ProductCategory } from '../common/product-category';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService { 
-
+export class ProductService {
 
   private baseUrl = 'http://localhost:8080/api/products'
   private categoryUrl = 'http://localhost:8080/api/product-category'
 
   constructor(private httpClient: HttpClient) { }
+
+  getProduct(productId: number): Observable<Product> {
+    const productUrl = `${this.baseUrl}/${productId}`;
+
+    return this.httpClient.get<Product>(productUrl)
+  } 
 
   getProductList(categoryId: number): Observable<Product[]> {
 
