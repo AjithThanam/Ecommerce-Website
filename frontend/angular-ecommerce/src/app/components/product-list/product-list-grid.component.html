@@ -4,7 +4,7 @@
             <div class="row">
 
                 <!-- loop over the collection of products -->
-                <div *ngFor="let tempProduct of products" class="column-m">
+                <div *ngFor="let tempProduct of products" class="col-md-3">
 
                     <div class="product-box">
 
@@ -27,6 +27,41 @@
                 </div>
 
             </div>
+
+            <!-- Footer start for pagination -->
+            <div class="footer-pagination">
+                <div class="row">
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-9" style="padding-left: 30%">
+                                <ngb-pagination [(page)]="pageNumber"
+                                                [(pageSize)]="pageSize"
+                                                [(collectionSize)]="totalElements"
+                                                [maxSize]="5"
+                                                (pageChange)="listProducts()"> 
+
+                                </ngb-pagination>
+                            </div>
+
+                            <div class="col-md-3 mt-2" style="text-align: right;">
+                                <span class="mr-2">Page Size</span>
+
+                                <select (change)="updatePageSize($event.target.value)">
+                                    <option selected="true">5</option>
+                                    <option>10</option>
+                                    <option>20</option>
+                                    <option>50</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Footer end for pagination -->
+
         </div>
     </div>
 </div>
