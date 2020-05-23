@@ -1,5 +1,13 @@
 <div class="cart-area d-n">
-    <a href="shopping-detail.html">
-        <div class="total">{{ totalPrice }} <span>{{ totalQuantity }}</span> </div> <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    <a routerLink="/cart-details">
+        <div class="total">
+            {{ totalPrice }}
+            <span>{{ totalQuantity }}</span>
+        </div>
     </a>
+    <span style="margin-right: 40px;">
+        <a routerLink="/cart-details">
+            <fa-icon id="cart" [icon]="faShoppingCart"></fa-icon>
+        </a>
+    </span>
 </div>

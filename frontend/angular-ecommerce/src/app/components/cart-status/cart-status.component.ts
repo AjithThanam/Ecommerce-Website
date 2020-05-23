@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart-status',
@@ -8,6 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartStatusComponent implements OnInit {
 
+  faShoppingCart = faShoppingCart;
   totalPrice: number = 0.00;
   totalQuantity: number = 0;
 
